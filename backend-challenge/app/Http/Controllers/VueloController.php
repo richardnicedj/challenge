@@ -15,7 +15,7 @@ class VueloController extends Controller
      */
     public function index()
     {
-        //
+        return Vuelo::all();
     }
 
     /**
@@ -45,9 +45,9 @@ class VueloController extends Controller
      * @param  \App\Models\Vuelo  $vuelo
      * @return \Illuminate\Http\Response
      */
-    public function show(Vuelo $vuelo)
+    public function show($id)
     {
-        //
+        return Vuelo::find($id);
     }
 
     /**

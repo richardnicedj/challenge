@@ -15,7 +15,7 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        //
+        return Persona::all();
     }
 
     /**
@@ -45,9 +45,9 @@ class PersonaController extends Controller
      * @param  \App\Models\Persona  $persona
      * @return \Illuminate\Http\Response
      */
-    public function show(Persona $persona)
+    public function show($id)
     {
-        //
+        return Persona::find($id);
     }
 
     /**
