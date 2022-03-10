@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 class VueloSeeder extends Seeder
 {
     /**
@@ -14,6 +15,18 @@ class VueloSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Faker::create();
+        for ($i=0; $i < 10; $i++) {
+                DB::table("vuelos")->insert(
+                    array(
+                            'id'         => $faker->unique()->randomNumber,
+                            'aereolinea'     => $faker->company(),
+                            'escalas'  => $faker->randomNumber,
+                            'fecha'     => date('Y-m-d H:m:s'),
+                            'created_at' => date('Y-m-d H:m:s'),
+                            'updated_at' => date('Y-m-d H:m:s')
+                    )
+                );
+        }
     }
 }
