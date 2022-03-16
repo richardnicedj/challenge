@@ -29,7 +29,7 @@
         <input type="date" required v-model="retorno" />
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" v-show="correcto">
+    <button type="submit" class="btn btn-outline-secondary" v-show="correcto">
       Buscar
     </button>
   </form>
